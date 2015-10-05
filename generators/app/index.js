@@ -78,6 +78,9 @@ module.exports = yeoman.generators.Base.extend({
     this.template("assets/controllers/_mainApp.js", "assets/controllers/mainApp.js");
     this.copy("assets/controllers/_usersController.js", "assets/controllers/usersController.js");
     this.copy("assets/services/_user.services.js", "assets/services/user.services.js");
+    this.copy("assets/services/_modal.services.js", "assets/services/modal.services.js");
+    this.copy("assets/modals/_popToConfirm.html", "assets/modals/popToConfirm.html");
+    this.copy("assets/modals/_popToConfirmController.js", "assets/modals/popToConfirmController.js");
     this.copy("assets/pages/main/_main.html", "assets/pages/main/main.html");
     this.copy("assets/pages/users/_users.html", "assets/pages/users/users.html");
     this.copy("assets/pages/users/_usersdetail.html", "assets/pages/users/usersdetail.html");

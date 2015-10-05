@@ -1,0 +1,21 @@
+<toast></toast>
+<div class="container">
+    <h3>Detalhe de <%= lentity %>s</h3>
+
+    <form name="modificarForm" class="form-horizontal">
+
+      <% for(var i=0; i< campos.length; i++) { %>
+        <div class="form-group">
+            <label for="input<%= campos[i]['campo'] %>" class="col-sm-2 control-label"><%= campos[i]['campo'] %></label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control"
+                       id="input<%= campos[i]['campo'] %>" placeholder="<%= campos[i]['campo'] %>"
+                       ng-model="<%= lentity %>Data.<%= campos[i]['campo'] %>" ng-required="true">
+            </div>
+        </div>
+      <% } %>
+        <button type="submit" class="btn btn-deloitte" ng-click="gravar()">Gravar</button>
+    </form>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <h3 class="col-md-4">Lista de <%= lentity %>s</h3>
+
+        <form class="form-inline ">
+            <div class="form-group col-md-6 col-md-offset-2">
+                <input placeholder="Filtro"
+                       class="form-control col-md-1 col-md-offset-4 input-deloitte" ng-model="filtro.name">
+                <a href="#/criar<%= lentity %>" class="btn btn-deloitte col-md-3" role="button">Criar <%= lentity %></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabela">
+        <table class="table">
+            <thead>
+            <tr>
+              <% for(var i=0; i< campos.length; i++) { %><th><%= campos[i]["campo"] %></th>
+              <% } %>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="<%= lentity %> in <%= lentity %>s |filter:filtro">
+              <td><a href="#/<%= lentity %>s/{{<%= lentity %>._id}}">{{<%= lentity %>.<%= campos[0]["campo"] %>}}</a></td>
+              <% for(var i=1; i< campos.length; i++) { %><td>{{<%= lentity %>.<%= campos[i]["campo"] %>}}</td>
+              <% } %>
+              <td>
+                <button type="button" class="btn btn-default" ng-click="requestDeleteSelected(<%= lentity %>)">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

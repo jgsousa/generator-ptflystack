@@ -9,7 +9,7 @@ mongoose.connection.on('open', function (ref) {
     });
 });
 if(process.env.LOCAL === 'yes'){
-    mongoose.connect('mongodb://localhost/<%= app %>');
+    mongoose.connect('mongodb://localhost/<%= lapp %>');
 } else {
     mongoose.connect(process.env.MONGOLAB_URI);
 }
